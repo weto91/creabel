@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Manifiesto del paquete MSIX de Creabel para Microsoft Store (lo usa scripts/msix.ps1, que pone
+  la versión en __VERSION__). La identidad (Name, Publisher, PublisherDisplayName) es la que da
+  Partner Center en «Product identity»: no se cambia nunca.
+  - runFullTrust: es una aplicación de escritorio normal (Tauri), no una de la plataforma UWP.
+  - firewallRules: deja entrar a los otros dispositivos por el puerto de «Compartir este equipo»
+    (47823, TCP y UDP, el HUB_PORT de app/assets/js/local/syncer.js) en las redes privadas y de
+    dominio. Windows la crea al instalar y la mantiene en cada actualización.
+  - Los idiomas son los de la interfaz; el primero es el principal.
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap desktop2 rescap">
+
+  <Identity
+    Name="weto91.Creabel"
+    Publisher="CN=5A2ACAC1-C803-4335-BE16-A8A6BA2942F0"
+    Version="__VERSION__"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>Creabel</DisplayName>
+    <PublisherDisplayName>weto91</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="es" />
+    <Resource Language="ca" />
+    <Resource Language="gl" />
+    <Resource Language="en" />
+    <Resource Language="de" />
+    <Resource Language="fr" />
+    <Resource Language="it" />
+    <Resource Language="nl" />
+    <Resource Language="pt-BR" />
+    <Resource Language="pt-PT" />
+    <Resource Language="pl" />
+    <Resource Language="cs" />
+    <Resource Language="sl" />
+    <Resource Language="sr-Latn-RS" />
+    <Resource Language="hu" />
+    <Resource Language="tr" />
+    <Resource Language="ru" />
+    <Resource Language="uk" />
+  </Resources>
+
+  <Applications>
+    <Application Id="Creabel" Executable="Creabel.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="Creabel"
+        Description="El taller de tu novela"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png" />
+    </Application>
+  </Applications>
+
+  <!-- La regla del cortafuegos va en las extensiones del paquete, no en las de la aplicación. -->
+  <Extensions>
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="Creabel.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="domainAndPrivate" LocalPortMin="47823" LocalPortMax="47823" />
+        <desktop2:Rule Direction="in" IPProtocol="UDP" Profile="domainAndPrivate" LocalPortMin="47823" LocalPortMax="47823" />
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+  </Extensions>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

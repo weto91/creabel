@@ -1,0 +1,46 @@
+[package]
+name = "creabel"
+version = "0.1.0"
+description = "Creabel: el taller de tu novela"
+authors = ["Álvaro Rubio Adán"]
+license = "GPL-3.0-only"
+repository = "https://github.com/weto91/creabel"
+edition = "2021"
+
+[lib]
+# Android necesita la aplicación como biblioteca; Windows la usa desde main.rs.
+name = "creabel_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# protocol-asset: enseñar en la página las imágenes guardadas en el disco (convertFileSrc).
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-opener = "2"
+tauri-plugin-sql = { version = "2", features = ["sqlite"] }
+tauri-plugin-fs = "2"
+# dangerous-settings: permite, solo si el usuario lo marca, aceptar certificados autofirmados.
+tauri-plugin-http = { version = "2", features = ["dangerous-settings"] }
+# El código que genera tauri::generate_context!() usa serde y serde_json.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Solo escritorio: actualizaciones y el servidor de emparejamiento (QR) para el móvil.
+[target.'cfg(any(target_os = "macos", windows, target_os = "linux"))'.dependencies]
+tauri-plugin-updater = "2"
+tiny_http = "0.12"
+local-ip-address = "0.6"
+qrcode = "0.14"
+
+# Solo móvil: leer el QR con la cámara.
+[target.'cfg(any(target_os = "android", target_os = "ios"))'.dependencies]
+tauri-plugin-barcode-scanner = "2"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

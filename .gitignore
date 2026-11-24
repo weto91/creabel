@@ -1,0 +1,19 @@
+# Dependencias y compilación
+node_modules/
+src-tauri/target/
+# Lo que genera Tauri en cada compilación (proyecto de Android, esquemas, iconos)
+src-tauri/gen/
+src-tauri/icons/
+src-tauri/tauri.release.conf.json
+
+# Herramientas locales (servidor de pruebas de la interfaz)
+.claude/
+app/_prueba-*.html
+
+# Claves: nunca en el repositorio (van en los secretos de GitHub)
+*.jks
+*.keystore
+*.key
+*.key.pub
+keystore.properties
+claves-creabel/

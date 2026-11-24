@@ -1,0 +1,15 @@
+{
+  "name": "creabel",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Creabel: el taller de tu novela (Windows y Android)",
+  "license": "GPL-3.0-only",
+  "author": "Álvaro Rubio Adán (https://github.com/weto91)",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "desktop",
+  "description": "Permisos solo de escritorio: buscar e instalar actualizaciones",
+  "platforms": ["windows", "linux", "macOS"],
+  "windows": ["main", "ventana-*"],
+  "permissions": [
+    "updater:default"
+  ]
+}

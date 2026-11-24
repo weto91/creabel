@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/mobile-schema.json",
+  "identifier": "mobile",
+  "description": "Permisos solo de Android: leer el código QR para emparejar",
+  "platforms": ["android", "iOS"],
+  "windows": ["main"],
+  "permissions": [
+    "barcode-scanner:default"
+  ]
+}
