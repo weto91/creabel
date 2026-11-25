@@ -1,10 +1,10 @@
-# Creabel
+**Español** · [English](README.en.md)
 
-**El taller de tu novela**, para Windows y Android: capítulos y escenas, personajes, lugares y
-demás fichas, línea temporal, continuidad, análisis del texto, guías de escritura y exportación a
-Word, EPUB, PDF y texto. Los proyectos se guardan en tu propio dispositivo.
+<p align="center"><img src="docs/readme/es/creabel.png" alt="Creabel, el taller de tu novela: Windows y Android, 19 idiomas, sin cuentas ni anuncios, también sin conexión, gratis y de código abierto"></p>
 
-*A writing studio for novelists, for Windows and Android, in 19 languages.*
+Creabel reúne en un solo sitio todo lo que sostiene una novela: capítulos y escenas, personajes,
+lugares y demás fichas, línea temporal, continuidad, análisis del texto, guías de escritura y
+exportación a Word, EPUB, PDF y texto. Los proyectos se guardan en tu propio dispositivo.
 
 ## Descargar
 
@@ -15,8 +15,79 @@ Word, EPUB, PDF y texto. Los proyectos se guardan en tu propio dispositivo.
 - **Android**: `Creabel_X.Y.Z_android.apk`, en [Versiones](https://github.com/weto91/creabel/releases)
   (también estará en Google Play).
 
-Los proyectos se pueden sincronizar entre tus dispositivos, también sin conexión: emparejando el
-móvil con el PC por código QR o con tu propio servidor WebDAV (un NAS, Nextcloud…).
+## Así es Creabel
+
+*Las capturas son de un proyecto de ejemplo: la novela y sus personajes son inventados.*
+
+### El inicio de cada proyecto
+
+Portada, la frase que resume la novela, por dónde ibas, lo siguiente por escribir y cómo va el
+libro: palabras, objetivo del día, racha y fecha de entrega.
+
+![Inicio del proyecto: portada, sinopsis, la última escena tocada, la siguiente por escribir, progreso del manuscrito, racha y entrega](docs/readme/es/inicio.png)
+
+### Escribir
+
+Un editor tranquilo, pensado para muchas horas. Al lado, la ficha de la escena: quién sale, dónde
+y cuándo pasa, qué tramas avanza, sus pendientes y sus revisiones.
+
+![Editor de una escena con su texto y, al lado, la ficha de la escena](docs/readme/es/escena.png)
+
+### Apuntas una vez, Creabel lo cruza todo
+
+![Lo que se apunta en una escena alimenta la línea temporal, la continuidad, las relaciones, el gráfico narrativo, las fichas y el análisis](docs/readme/es/apuntas-una-vez.png)
+
+### Personajes con entrevista
+
+Cada personaje se construye respondiendo preguntas por secciones (datos personales, aspecto,
+psicología, creencias…). Creabel saca de lo que escribes sus rasgos clave y sabe en qué escenas
+aparece.
+
+![Ficha de personaje: rasgos clave, papel en la historia, nacimiento y la entrevista por secciones](docs/readme/es/personaje.png)
+
+### La novela de un vistazo
+
+El tablero tiene una columna por capítulo y una tarjeta por escena, con el color de cada trama.
+Las tarjetas se arrastran para cambiar el orden. Aquí, con el tema oscuro.
+
+![Tablero con los capítulos en columnas y las escenas como tarjetas, en tema oscuro](docs/readme/es/tablero.png)
+
+### Cuándo pasa cada cosa
+
+La línea temporal ordena escenas y eventos por fecha (también los de antes de que empiece el
+libro) y dice cuánto tiempo pasa entre uno y otro.
+
+![Línea temporal con eventos y escenas ordenados por fecha](docs/readme/es/linea-temporal.png)
+
+### Relaciones que se dibujan solas
+
+Quién coincide con quién, qué personaje recorre qué lugares, quién avanza cada trama… Creabel lo
+deduce de lo que ya has apuntado. También puedes dibujar tus propios mapas.
+
+![Gráfico de todas las relaciones entre personajes, lugares, tramas y objetos](docs/readme/es/relaciones.png)
+
+### Tu ritmo y tu estilo
+
+Palabras al día, rachas, previsión de cuándo terminarás, actividad de los últimos meses, y una
+revisión de estilo (repeticiones, muletillas, frases largas, diálogo) con las reglas del idioma de
+tu novela.
+
+![Análisis de la escritura: palabras de hoy, racha, objetivo y previsión, actividad y media por día](docs/readme/es/analisis.png)
+
+### En el móvil
+
+La misma novela en el teléfono o la tableta, con una barra abajo para moverse con el pulgar y un
+botón para volver a la escena en la que estabas.
+
+<p align="center"><img src="docs/readme/es/movil.png" width="720" alt="Creabel en dos teléfonos Android: el inicio del proyecto y el editor de una escena"></p>
+
+### Todo el camino
+
+![Las cuatro fases: planifica, escribe, revisa y publica, con lo que ofrece Creabel en cada una](docs/readme/es/de-la-idea-al-libro.png)
+
+## Tus datos
+
+![El PC y el móvil se emparejan con un código QR y pueden usar también un servidor WebDAV propio; sin cuentas, también sin conexión y sin perder nada](docs/readme/es/tus-dispositivos.png)
 
 Creabel no recoge ningún dato: ver la [política de privacidad](PRIVACIDAD.md).
 

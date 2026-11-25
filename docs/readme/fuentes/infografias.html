@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --ink: #1f2a30; --muted: #5b6b75; --slate: #2d5d7b; --deep: #234b64; --soft: #d3e1ea; --panel: #f3f5f6; --line: #dbe2e6; --paper: #fbfbf9; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: transparent; }
+  body { font: 16px/1.45 'Segoe UI', system-ui, sans-serif; color: var(--ink); padding: 10px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 34px 40px; }
+  h1, h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; margin: 0; color: var(--ink); }
+  h2 { font-size: 30px; }
+  .sub { color: var(--muted); font-size: 17px; margin: 8px 0 0; max-width: 820px; }
+  svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .ico { width: 42px; height: 42px; border-radius: 9px; background: var(--slate); color: #fff; display: grid; place-items: center; flex: none; }
+  .ico svg.i { width: 22px; height: 22px; }
+
+  /* Portada */
+  .hero { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; background: linear-gradient(135deg, #2d5d7b, #1d3d52); border: 0; color: #f3f5f6; padding: 44px 48px; }
+  .brand { display: flex; align-items: center; gap: 22px; }
+  .brand h1 { font-size: 64px; color: #fff; letter-spacing: .5px; }
+  .tag { font-family: Georgia, serif; font-style: italic; font-size: 25px; color: #d3e1ea; margin: 14px 0 0; }
+  .hero .sub { color: #c9d8e2; font-size: 17px; margin-top: 14px; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .fact { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 10px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .fact.wide { grid-column: span 2; }
+  .fact b { display: block; font-size: 17px; color: #fff; }
+  .fact span { color: #c9d8e2; font-size: 14px; }
+  .fact svg.i { color: #d3e1ea; margin-top: 2px; }
+
+  /* Apuntas una vez */
+  .once { display: grid; grid-template-columns: 330px 70px 1fr; gap: 0; align-items: center; margin-top: 26px; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-left: 5px solid #c0504d; border-radius: 10px; padding: 18px 20px; box-shadow: 0 6px 18px rgba(31,42,48,.07); }
+  .card .code { font: 600 12px 'Segoe UI', sans-serif; color: var(--muted); letter-spacing: .5px; }
+  .card .title { font-family: Georgia, serif; font-size: 21px; margin: 2px 0 12px; }
+  .row { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 7px 0; border-top: 1px solid #e7ecef; font-size: 14.5px; }
+  .row svg.i { width: 18px; height: 18px; color: var(--slate); margin-top: 2px; }
+  .row small { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .6px; }
+  .fan { height: 100%; }
+  .outs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .out { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; gap: 14px; align-items: flex-start; }
+  .out b { display: block; font-size: 16.5px; }
+  .out span { color: var(--muted); font-size: 14.5px; }
+
+  /* Proceso */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 33px; left: 8%; right: 8%; height: 2px; background: var(--soft); }
+  .step { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px 20px 16px; }
+  .step .head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .num { font: 600 13px 'Segoe UI', sans-serif; color: var(--muted); letter-spacing: 1px; }
+  .step h3 { font-family: Georgia, serif; font-weight: normal; font-size: 22px; margin: 0; }
+  .step ul { margin: 0; padding: 0; list-style: none; }
+  .step li { font-size: 14.5px; padding: 6px 0 6px 18px; border-top: 1px solid #edf1f3; position: relative; }
+  .step li::before { content: ''; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; background: var(--slate); border-radius: 1px; }
+
+  /* Datos */
+  .net { display: grid; grid-template-columns: 1fr 200px 1fr; align-items: center; margin-top: 26px; }
+  .dev { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: center; }
+  .dev b { display: block; font-size: 17px; }
+  .dev span { color: var(--muted); font-size: 14px; }
+  .dev .ico { width: 54px; height: 54px; border-radius: 11px; }
+  .dev .ico svg.i { width: 28px; height: 28px; }
+  .link { text-align: center; color: var(--muted); font-size: 13.5px; }
+  .link .bar { height: 2px; background: var(--slate); margin: 8px 14px; position: relative; }
+  .link .bar::before, .link .bar::after { content: ''; position: absolute; top: -5px; border: 6px solid transparent; }
+  .link .bar::before { left: -6px; border-right-color: var(--slate); border-left: 0; }
+  .link .bar::after { right: -6px; border-left-color: var(--slate); border-right: 0; }
+  .link svg.i { width: 30px; height: 30px; color: var(--slate); }
+  .serverwrap { display: grid; grid-template-columns: 1fr 1.2fr 1fr; align-items: start; }
+  .lines { height: 112px; }
+  .serverwrap .dev { margin-top: 34px; }
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; }
+  .point { display: flex; gap: 12px; align-items: flex-start; }
+  .point svg.i { color: var(--slate); margin-top: 3px; }
+  .point b { display: block; font-size: 16px; }
+  .point span { color: var(--muted); font-size: 14.5px; }
+</style>
+</head>
+<body>
+<script>
+const Q = new URLSearchParams(location.search);
+const id = Q.get('id') || 'hero';
+const lang = Q.get('lang') || 'es';
+const P = {
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  layers: '<path d="m12 2 10 5-10 5L2 7zM2 12l10 5 10-5M2 17l10 5 10-5"/>',
+  users: '<circle cx="9" cy="8" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M16 4a4 4 0 0 1 0 8M22 21v-1a6 6 0 0 0-4-5.7"/>',
+  pin: '<path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
+  box: '<path d="M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/>',
+  share: '<circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/>',
+  book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
+  activity: '<path d="M2 12h4l3-8 5 16 3-8h5"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  eye: '<path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/>',
+  download: '<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  server: '<rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/>',
+  sync: '<path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4"/>',
+  monitor: '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
+  phone: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+  qr: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  feather: '<path d="M20 4a7 7 0 0 0-10 0L4 10v10h10l6-6a7 7 0 0 0 0-10zM16 8 4 20M15 15H9"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>',
+  lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  shield: '<path d="M12 3 5 6v6c0 4.5 3 7.6 7 9 4-1.4 7-4.5 7-9V6l-7-3z"/><path d="m9 12 2 2 4-4"/>',
+  heart: '<path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/>',
+};
+const i = (name) => `<svg class="i" viewBox="0 0 24 24">${P[name]}</svg>`;
+const appIcon = '<svg width="84" height="84" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#f3f5f6"/><path d="M46 14c-9-2-19 3-23 12l-5 14-4 10 9-5 13-5c9-4 13-15 10-26z" fill="#2d5d7b"/><path d="M14 50 40 24" stroke="#f3f5f6" stroke-width="3" stroke-linecap="round"/></svg>';
+
+const T = {
+  es: {
+    hero: { tag: 'El taller de tu novela', sub: 'Planifica, escribe, revisa y publica tu novela en un solo sitio. Gratis, libre y en tu propio equipo.',
+      facts: [['monitor', 'Windows y Android', 'el mismo proyecto en el PC y en el móvil'], ['globe', '19 idiomas', 'y el análisis sigue el de tu novela'], ['lock', 'Sin cuentas ni anuncios', 'tus textos no salen de tus equipos'], ['sync', 'También sin conexión', 'se sincroniza al volver a la red'], ['heart', 'Gratis y de código abierto', 'licencia GNU GPL v3', true]] },
+    once: { title: 'Apuntas una vez. Creabel lo cruza todo.', sub: 'En cada escena dices quién sale, dónde y cuándo pasa y qué trama avanza. Con eso, el resto se construye solo.',
+      card: ['ES-004', 'El faro apagado', [['users', 'Personajes', 'Inés Arriaga'], ['pin', 'Lugar', 'Faro de Punta Gris'], ['calendar', 'Cuándo', '13 oct 2024, 19:40'], ['layers', 'Trama', 'La desaparición de Tomás'], ['box', 'Objeto', 'Lente de Fresnel']]],
+      outs: [['clock', 'Línea temporal', 'Escenas y eventos en orden, con el tiempo que pasa entre ellos.'], ['shield', 'Continuidad', 'Avisa si alguien está en dos sitios a la vez o sale antes de nacer.'], ['share', 'Relaciones', 'Dibuja quién coincide con quién, en qué tramas y lugares.'], ['activity', 'Gráfico narrativo', 'Muestra cuándo desaparece un personaje o se abandona una trama.'], ['user', 'Fichas', 'Cada personaje y cada lugar sabe en qué escenas sale.'], ['chart', 'Análisis', 'Palabras, ritmo, diálogo, repeticiones y muletillas, por capítulo.']] },
+    steps: { title: 'De la primera idea al libro terminado', sub: 'Todo el camino en la misma aplicación, con guías de escritura para cada fase.',
+      list: [['layers', 'Planifica', ['Premisa, fábula y ambientación', 'Tramas, cada una con su color', 'Personajes con entrevista guiada', 'Lugares, objetos, grupos y fichas propias']], ['feather', 'Escribe', ['Editor tranquilo, pensado para horas', 'Objetivos, rachas y previsión de entrega', 'Revisiones de cada escena', 'Varias ventanas a la vez (en el PC)']], ['eye', 'Revisa', ['Estilo con las reglas de tu idioma', 'Continuidad y quién sabe qué', 'Línea temporal y gráfico narrativo', 'Pendientes enlazados a cada escena']], ['download', 'Publica', ['Word, EPUB, PDF y texto', 'Portada y páginas del libro', 'Lectura seguida del manuscrito', 'Copias de seguridad']]] },
+    data: { title: 'Tus novelas, en tus dispositivos', sub: 'Sin servidores ajenos: Creabel guarda cada proyecto en tu equipo y lo lleva directamente a los demás, o a tu propio servidor si lo prefieres.',
+      pc: ['Creabel para Windows', 'escribe en el PC'], phone: ['Creabel para Android', 'y sigue en el móvil o la tableta'], qr: 'se emparejan con un código QR', server: ['Tu servidor WebDAV', 'opcional: un NAS, Nextcloud…'],
+      points: [['lock', 'Sin cuentas ni nube ajena', 'Los proyectos viajan directamente entre tus dispositivos.'], ['sync', 'También sin conexión', 'Escribe en el tren: los cambios se juntan al volver a la red.'], ['shield', 'No se pierde nada', 'Si dos dispositivos cambian la misma escena, se guardan las dos versiones.']] },
+  },
+  en: {
+    hero: { tag: 'The workshop for your novel', sub: 'Plan, write, revise and publish your novel in one place. Free, open source and on your own device.',
+      facts: [['monitor', 'Windows & Android', 'the same project on your PC and your phone'], ['globe', '19 languages', 'and analysis follows your novel’s language'], ['lock', 'No accounts, no ads', 'your writing never leaves your devices'], ['sync', 'Works offline', 'syncs when you’re back online'], ['heart', 'Free and open source', 'GNU GPL v3 licence', true]] },
+    once: { title: 'Tag it once. Creabel connects everything.', sub: 'In each scene you note who’s in it, where and when it happens and which strand moves forward. From that, the rest builds itself.',
+      card: ['S-004', 'The Dark Lighthouse', [['users', 'Characters', 'Inés Arriaga'], ['pin', 'Location', 'Punta Gris Lighthouse'], ['calendar', 'When', '13 Oct 2024, 7:40 PM'], ['layers', 'Strand', 'Tomás’s disappearance'], ['box', 'Object', 'Fresnel lens']]],
+      outs: [['clock', 'Timeline', 'Scenes and events in order, with the time that passes between them.'], ['shield', 'Continuity', 'Warns you if someone is in two places at once or shows up before they’re born.'], ['share', 'Relationships', 'Maps who shares scenes with whom, in which strands and places.'], ['activity', 'Narrative chart', 'Shows when a character disappears or a strand is dropped.'], ['user', 'Records', 'Every character and place knows which scenes it appears in.'], ['chart', 'Analysis', 'Words, pace, dialogue, repetitions and filler words, chapter by chapter.']] },
+    steps: { title: 'From first idea to finished book', sub: 'The whole journey in one app, with writing guides for every stage.',
+      list: [['layers', 'Plan', ['Premise, story and setting', 'Strands, each with its own colour', 'Characters with a guided interview', 'Places, objects, groups and your own record types']], ['feather', 'Write', ['A calm editor made for long sessions', 'Goals, streaks and a finishing forecast', 'Revisions for every scene', 'Several windows at once (on PC)']], ['eye', 'Revise', ['Style review with your language’s rules', 'Continuity and who knows what', 'Timeline and narrative chart', 'To-dos linked to each scene']], ['download', 'Publish', ['Word, EPUB, PDF and plain text', 'Cover and book pages', 'Read the manuscript straight through', 'Backups']]] },
+    data: { title: 'Your novels, on your devices', sub: 'No third-party servers: Creabel keeps every project on your device and takes it straight to your others, or to your own server if you prefer.',
+      pc: ['Creabel for Windows', 'write on your PC'], phone: ['Creabel for Android', 'and carry on on your phone or tablet'], qr: 'paired with a QR code', server: ['Your WebDAV server', 'optional: a NAS, Nextcloud…'],
+      points: [['lock', 'No accounts, no third-party cloud', 'Projects travel directly between your devices.'], ['sync', 'Works offline', 'Write on the train: changes are merged when you’re back online.'], ['shield', 'Nothing gets lost', 'If two devices change the same scene, both versions are kept.']] },
+  },
+}[lang];
+
+let html = '';
+if (id === 'hero') {
+  const h = T.hero;
+  html = `<div class="panel hero"><div><div class="brand">${appIcon}<h1>Creabel</h1></div><p class="tag">${h.tag}</p><p class="sub">${h.sub}</p></div>
+    <div class="facts">${h.facts.map(([ic, b, s, wide]) => `<div class="fact${wide ? ' wide' : ''}">${i(ic)}<div><b>${b}</b><span>${s}</span></div></div>`).join('')}</div></div>`;
+} else if (id === 'once') {
+  const o = T.once;
+  const [code, title, rows] = o.card;
+  const fan = `<svg class="fan" viewBox="0 0 70 400" preserveAspectRatio="none" width="70" height="400">${[67, 200, 333].map((y) => `<path d="M2 200 C 40 200, 30 ${y}, 66 ${y}" stroke="#9fb8c8" stroke-width="1.6" fill="none"/>`).join('')}<circle cx="3" cy="200" r="3.5" fill="#2d5d7b"/></svg>`;
+  html = `<div class="panel"><h2>${o.title}</h2><p class="sub">${o.sub}</p>
+    <div class="once"><div class="card"><div class="code">${code}</div><div class="title">${title}</div>${rows.map(([ic, k, v]) => `<div class="row">${i(ic)}<div><small>${k}</small>${v}</div></div>`).join('')}</div>
+    ${fan}
+    <div class="outs">${o.outs.map(([ic, b, s]) => `<div class="out"><div class="ico">${i(ic)}</div><div><b>${b}</b><span>${s}</span></div></div>`).join('')}</div></div></div>`;
+} else if (id === 'steps') {
+  const s = T.steps;
+  html = `<div class="panel"><h2>${s.title}</h2><p class="sub">${s.sub}</p><div class="steps">${s.list.map(([ic, name, items], n) => `<div class="step"><div class="head"><div class="ico">${i(ic)}</div><div><div class="num">0${n + 1}</div><h3>${name}</h3></div></div><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></div>`;
+} else {
+  const d = T.data;
+  const dev = (ic, [b, s]) => `<div class="dev"><div class="ico">${i(ic)}</div><div><b>${b}</b><span>${s}</span></div></div>`;
+  html = `<div class="panel"><h2>${d.title}</h2><p class="sub">${d.sub}</p>
+    <div class="net">${dev('monitor', d.pc)}<div class="link">${i('qr')}<div class="bar"></div>${d.qr}</div>${dev('phone', d.phone)}</div>
+    <div class="serverwrap"><svg class="lines" viewBox="0 0 100 112" preserveAspectRatio="none" width="100%" height="112"><path d="M50 0 V 79 H 100" stroke="#9fb8c8" stroke-width="1.6" stroke-dasharray="5 4" fill="none" vector-effect="non-scaling-stroke"/></svg>
+      ${dev('server', d.server)}
+      <svg class="lines" viewBox="0 0 100 112" preserveAspectRatio="none" width="100%" height="112"><path d="M50 0 V 79 H 0" stroke="#9fb8c8" stroke-width="1.6" stroke-dasharray="5 4" fill="none" vector-effect="non-scaling-stroke"/></svg></div>
+    <div class="points">${d.points.map(([ic, b, s]) => `<div class="point">${i(ic)}<div><b>${b}</b><span>${s}</span></div></div>`).join('')}</div></div>`;
+}
+document.body.innerHTML = html;
+</script>
+</body>
+</html>
