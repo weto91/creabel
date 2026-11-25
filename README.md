@@ -8,10 +8,11 @@ exportación a Word, EPUB, PDF y texto. Los proyectos se guardan en tu propio di
 
 ## Descargar
 
-- **Windows**: en **Microsoft Store** (busca «Creabel»), que la instala sin avisos y la
-  actualiza sola. O con el instalador `Creabel_X.Y.Z_x64-setup.exe` de
+- **Windows**: el instalador `Creabel_X.Y.Z_x64-setup.exe` de
   [Versiones](https://github.com/weto91/creabel/releases), que avisa cuando hay una versión nueva
-  y se actualiza con un clic. Usa una de las dos en cada PC, no las dos a la vez.
+  y se actualiza con un clic. **Próximamente también en Microsoft Store** (aún no está
+  disponible), que la instalará sin avisos y la actualizará sola. Cuando esté, usa una de las dos
+  en cada PC, no las dos a la vez.
 - **Android**: `Creabel_X.Y.Z_android.apk`, en [Versiones](https://github.com/weto91/creabel/releases)
   (también estará en Google Play).
 
