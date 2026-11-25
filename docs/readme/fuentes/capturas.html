@@ -61,13 +61,17 @@ for (const label of (Q.get('click') || '').split('|').filter(Boolean)) {
 if (Q.get('scroll')) {
   const el = [...document.querySelectorAll('h1, h2, h3, h4, .card-title, strong')].find((x) => visible(x) && (x.innerText || '').trim().startsWith(Q.get('scroll')));
   if (el) {
-    el.scrollIntoView({ block: 'start' });
-    const box = [...document.querySelectorAll('main, .main, .content, .page')].find((x) => x.scrollHeight > x.clientHeight + 4);
+    // No se desplaza la ventana (Edge sin ventana descoloca el menú fijo al capturar una página
+    // desplazada): se sube el contenido.
     const back = Number(Q.get('margen') || 24);
-    if (box) box.scrollTop -= back; else window.scrollBy(0, -back);
+    const host = document.querySelector('main') || document.body;
+    host.style.transform = `translateY(${-Math.max(0, el.getBoundingClientRect().top - back)}px)`;
   }
   await wait(400);
 }
+// Sin el cursor en el editor: en el móvil, mientras se escribe se esconde la barra de abajo.
+if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur();
+await wait(300);
 document.documentElement.dataset.captura = 'lista';
 </script>
 </body>

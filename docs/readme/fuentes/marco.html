@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Creabel en un teléfono</title>
+<style>
+  html { overflow: hidden; background: #222e36; }
+  html, body { margin: 0; height: 100%; }
+  iframe { border: 0; display: block; }
+</style>
+</head>
+<body>
+<script>
+// Una captura de teléfono a pantalla completa (para Google Play): la aplicación de Android en
+// un marco de w × h píxeles, arriba a la izquierda. Edge sin ventana no baja de 500 px de ancho,
+// así que un teléfono de 412 px no se puede capturar directamente: generar.ps1 hace la captura
+// de una ventana mayor, ampliada, y la recorta al tamaño del marco.
+//   ?w=412&h=733&lang=es&go=scene:sc2&tema=light&click=…
+const Q = new URLSearchParams(location.search);
+const frame = document.createElement('iframe');
+frame.style.width = (Number(Q.get('w')) || 412) + 'px';
+frame.style.height = (Number(Q.get('h')) || 733) + 'px';
+const pass = new URLSearchParams(Q);
+for (const k of ['w', 'h']) pass.delete(k);
+frame.src = '_prueba-capturas.html?android&nuevo&' + pass.toString();
+document.body.append(frame);
+</script>
+</body>
+</html>

@@ -52,8 +52,8 @@ En **creabel-dev** en GitHub → **Add file** → **Create new file** → nombre
 
 ### 5. El enlace de donaciones
 
-Sustituir `[ENLACE DE DONACIONES]` en `README.md` y en `LICENSE-ADDITIONAL-TERMS.md` (y en el
-«Acerca de» de la aplicación) cuando esté elegido.
+Está en `README.md`, `README.en.md` y `LICENSE-ADDITIONAL-TERMS.md`. Dentro de la aplicación no
+sale: Google Play no deja a un particular pedir donaciones fuera de su sistema de pagos.
 
 ## Cada versión
 
@@ -174,6 +174,67 @@ como se explica ahí:
    - **Submission options**: explicar `runFullTrust`, por ejemplo: «Creabel es una aplicación de
      escritorio (Tauri) que guarda los proyectos en el disco y se sincroniza en la red local.»
 3. **Submit to the Store**. Microsoft lo revisa (de horas a unos días) y lo publica.
+
+## Google Play
+
+A Play se sube el `.aab` (artefacto `google-play` de **Publicar versión**), no el APK. Los textos,
+las imágenes y las respuestas de los formularios están en [`TIENDA.md`](TIENDA.md) → «Google
+Play».
+
+Creabel se firma en Play **con nuestra propia clave** (la de `ANDROID_KEY_*`), la misma del APK de
+GitHub: así quien la instaló desde GitHub pasa a actualizarse por Play sin desinstalar. Eso se
+decide una sola vez, **antes de subir el primer `.aab`**, y después ya no se puede cambiar.
+
+### Una sola vez
+
+1. **Crear la aplicación.** Play Console → **Crear aplicación**: nombre «Creabel: escribe tu
+   novela», idioma predeterminado *Español (España)*, *Aplicación*, *Gratis*, y aceptar las
+   declaraciones.
+2. **Darle a Google nuestra clave** (antes de crear ninguna versión):
+   1. En la aplicación, menú de la izquierda: **Protegida con Play** → **Protección de Play Store**
+      → **Gestionar firma de aplicaciones de Play** → **Cambiar clave** (en algunas cuentas sale al
+      crear la primera versión, en «Firma de aplicaciones de Play» → **Cambiar clave de firma**).
+   2. Elige **proporcionar una copia de la clave de firma** (exportar y subir una clave de un
+      almacén de claves de Java). Play enseña unas instrucciones con dos descargas: de ahí solo
+      hace falta **`encryption_public_key.pem`** (la clave pública de cifrado). Ábrela con el Bloc
+      de notas y copia todo su contenido.
+   3. En **creabel-dev** → **Actions** → **Clave para Google Play (una sola vez)** → **Run
+      workflow** → pega lo copiado → **Run workflow**.
+   4. Al terminar, descarga el artefacto **clave-para-play** y descomprímelo: sube
+      **`clave-para-play.zip`** donde lo pide Play Console, y guarda. Después **borra el artefacto**
+      (aunque caduca en un día y solo Google puede abrir ese archivo).
+   5. Comprueba que la huella **SHA-256** del «certificado de la clave de firma de la aplicación»
+      que enseña Play es la misma que sale en el resumen de las compilaciones de Android.
+3. **Contenido de la aplicación** (Panel → «Configura tu aplicación»): política de privacidad,
+   acceso, anuncios, clasificación de contenido, audiencia objetivo, seguridad de los datos…
+   Todas las respuestas están en `TIENDA.md`.
+4. **Ficha de Play Store** → **Ficha principal**: textos en español e imágenes de
+   `docs/tienda/play/` (icono, gráfico de funciones, capturas de teléfono y de tableta). Después,
+   **Añadir traducción** → *Inglés (Estados Unidos)* con los suyos.
+5. **Prueba interna** (opcional, recomendable): **Pruebas** → **Prueba interna** → **Crear
+   versión** → sube el `.aab` → añade tu correo como probador → instala desde el enlace. Si tenías
+   el APK de GitHub, tiene que actualizarse encima sin pedir que desinstales: es la prueba de que
+   la clave es la misma.
+6. **Prueba cerrada** (obligatoria en una cuenta personal): **Pruebas** → **Prueba cerrada** →
+   elige países (todos), crea la lista de probadores (correos de Google, o un grupo de Google) y
+   sube el `.aab` (o promociona el de la prueba interna). Envíala a revisión; cuando la aprueben,
+   pasa a los probadores el enlace para apuntarse. Hacen falta **12 personas apuntadas durante 14
+   días seguidos** (mejor 15 o 20: si bajan de 12, la cuenta vuelve a empezar).
+7. **Solicitar acceso a producción**: Panel → **Solicitar acceso a producción**, pasados los 14
+   días. Preguntan por la prueba (ver `TIENDA.md`); la respuesta suele tardar una semana o menos.
+8. **Producción** → **Crear versión** → el mismo `.aab` (o promocionar el de la prueba cerrada) →
+   países → enviar a revisión.
+
+### Cada versión
+
+1. Publica la versión (etiqueta `vX.Y.Z`) y descarga el artefacto `google-play` de la ejecución.
+2. Play Console → **Producción** (o la pista de prueba) → **Crear versión** → sube el `.aab` →
+   notas de la versión → **Revisar** → **Enviar**.
+
+Play solo acepta un `.aab` con un número de versión interno mayor que el anterior. Sale del número
+de la versión (0.1.0 → 1000, 0.1.1 → 1001, 0.2.0 → 2000), así que basta con subir versiones cada
+vez mayores. **No subas a Play el `.aab` de una versión previa** (`v0.2.0-beta.1`): lleva el mismo
+número interno que la `0.2.0` y Play rechazaría después la definitiva.
 
 ## La web antigua
 
