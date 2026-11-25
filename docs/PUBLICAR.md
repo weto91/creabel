@@ -4,7 +4,9 @@ Todo se compila en GitHub Actions: no hace falta instalar Node, Rust ni Android 
 
 - **creabel-dev** (privado): aquí se trabaja. Cada subida a `main` compila una versión de prueba.
 - **creabel** (público): recibe el código y los instaladores de cada versión publicada, con su
-  lista de cambios. La aplicación de Windows mira aquí si hay versión nueva.
+  lista de cambios. La aplicación de Windows mira aquí si hay versión nueva. La documentación
+  (`README.md`, `PRIVACIDAD.md`, las licencias y `docs/`) llega antes: en cuanto se sube un cambio
+  en ella, **Publicar documentación** la copia sola, sin compilar ni publicar versión.
 
 ## Una sola vez
 

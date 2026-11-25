@@ -151,6 +151,17 @@ Resultado esperado: para todos los públicos (PEGI 3 / Everyone).
 > in it. Sync is optional and needs another device of the user's own (Creabel for Android) or a
 > WebDAV server; it is not required to test the app.
 
+## Logotipos
+
+En [`tienda/`](tienda/), con el icono de la aplicación (pluma clara sobre el azul pizarra
+`#2d5d7b`) y el nombre en Georgia, la letra del editor. Sirven para todos los idiomas.
+
+| Lo que pide Partner Center | Archivos |
+| --- | --- |
+| Arte de póster 9:16 | `poster-720x1080.png`, `poster-1440x2160.png` |
+| Arte de caja 1:1 | `caja-1080x1080.png`, `caja-2160x2160.png` |
+| Icono de la aplicación 1:1 | `icono-300x300.png`, `icono-150x150.png`, `icono-71x71.png` |
+
 ## Capturas
 
 Al menos una (mejor 4 o 5), en PNG, de 1920 × 1080 (vale desde 1366 × 768). Con la ventana de
