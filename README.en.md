@@ -8,13 +8,14 @@ EPUB, PDF and plain text. Your projects are stored on your own device.
 
 ## Download
 
-- **Windows**: the `Creabel_X.Y.Z_x64-setup.exe` installer from
-  [Releases](https://github.com/weto91/creabel/releases), which tells you when a new version is
-  out and updates with one click. **Coming soon to the Microsoft Store** (not available yet),
-  which will install it without warnings and keep it up to date. Once it’s there, use one or the
-  other on each PC, not both.
-- **Android**: `Creabel_X.Y.Z_android.apk`, from [Releases](https://github.com/weto91/creabel/releases)
-  (coming to Google Play too).
+- **Windows**: from the **Microsoft Store** (search for “Creabel”), which installs it without
+  Windows warnings and keeps it up to date. Or with the `Creabel_X.Y.Z_x64-setup.exe` installer
+  from [Releases](https://github.com/weto91/creabel/releases), which tells you when a new version
+  is out and updates with one click. Use one or the other on each PC, not both.
+- **Android**: from [Google Play](https://play.google.com/store/apps/details?id=io.github.weto91.creabel),
+  which keeps it up to date. Or with `Creabel_X.Y.Z_android.apk`, from
+  [Releases](https://github.com/weto91/creabel/releases). Both are signed with the same key, so
+  you can switch from one to the other without uninstalling.
 
 ## A look at Creabel
 

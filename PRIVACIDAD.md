@@ -4,6 +4,8 @@
 
 Creabel no recoge ningún dato de quien la usa. No hay cuentas, ni publicidad, ni estadísticas
 de uso, ni informes de errores que se envíen a ningún sitio. El desarrollador no recibe nada.
+(Si la aplicación de Android se cierra por un error, apunta qué falló en el propio dispositivo y
+te lo enseña en Ajustes → Acerca de, por si quieres copiarlo y avisar: no se envía.)
 
 ## Dónde están tus datos
 
@@ -46,6 +48,8 @@ cualquier duda: <https://github.com/weto91/creabel/issues>.
 
 Creabel collects no data about its users. There are no accounts, no advertising, no usage
 statistics and no error reports sent anywhere. The developer receives nothing.
+(If the Android app closes because of an error, it notes what went wrong on the device itself and
+shows it to you under Settings → About, in case you want to copy it and report it: nothing is sent.)
 
 ## Where your data is
 

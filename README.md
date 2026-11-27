@@ -8,13 +8,14 @@ exportación a Word, EPUB, PDF y texto. Los proyectos se guardan en tu propio di
 
 ## Descargar
 
-- **Windows**: el instalador `Creabel_X.Y.Z_x64-setup.exe` de
+- **Windows**: en **Microsoft Store** (busca «Creabel»), que la instala sin avisos de Windows y
+  la actualiza sola. O con el instalador `Creabel_X.Y.Z_x64-setup.exe` de
   [Versiones](https://github.com/weto91/creabel/releases), que avisa cuando hay una versión nueva
-  y se actualiza con un clic. **Próximamente también en Microsoft Store** (aún no está
-  disponible), que la instalará sin avisos y la actualizará sola. Cuando esté, usa una de las dos
-  en cada PC, no las dos a la vez.
-- **Android**: `Creabel_X.Y.Z_android.apk`, en [Versiones](https://github.com/weto91/creabel/releases)
-  (también estará en Google Play).
+  y se actualiza con un clic. Usa una de las dos en cada PC, no las dos a la vez.
+- **Android**: en [Google Play](https://play.google.com/store/apps/details?id=io.github.weto91.creabel),
+  que la actualiza sola. O con `Creabel_X.Y.Z_android.apk`, de
+  [Versiones](https://github.com/weto91/creabel/releases). Las dos van firmadas igual: se puede
+  pasar de una a otra sin desinstalar.
 
 ## Así es Creabel
 
