@@ -1,6 +1,6 @@
 [package]
 name = "creabel"
-version = "0.1.0"
+version = "0.1.1"
 description = "Creabel: el taller de tu novela"
 authors = ["Álvaro Rubio Adán"]
 license = "GPL-3.0-only"

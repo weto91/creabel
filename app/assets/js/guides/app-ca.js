@@ -57,6 +57,7 @@ export default [
         'Els dos botons del mig es trien a **Configuració → Barra del mòbil**: un apartat, per anar-hi directament (Llocs, Pendents…), o un grup del menú, que obre la seva llista (per exemple Món: personatges, llocs, objectes…).',
         'Mentre escrius, la barra de baix s’aparta per deixar lloc al teclat.',
         '**Configuració** s’obre com una llista de tots els seus apartats; cadascun, amb una fletxa per tornar.',
+        'A Android, si l’aplicació es tanca sola per un error, **Configuració → Quant a** mostra què ha fallat, per copiar-ho i avisar. Es desa només al dispositiu.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-del-projecte.docx', 'Tot el material de treball en un document.'],
       ] },
       { p: 'El llibre, les fitxes i el dossier hi són per poder llegir la teva feina sense Creabel; per restaurar només calen el JSON i els fitxers. No hi entra el que és a la [[data#trash|paperera]] ni les preferències de l’aplicació (tema, llengua, avisos), que no són del projecte.' },
+      { tip: 'A Windows, el que exportes (còpies de seguretat, Word, EPUB…) es desa a la carpeta Baixades: un avís en diu el nom i porta un botó per veure-ho a la seva carpeta.' },
       { h: 'Restaurar una còpia', id: 'restore' },
       { steps: [
         'A «Els teus projectes», prem «Importa una còpia».',

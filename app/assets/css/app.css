@@ -1957,3 +1957,9 @@ kbd { display: inline-block; padding: 0 5px; border: 1px solid var(--border-stro
 .sync-card-type { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
 .sync-qr-data p { margin: 0 0 8px; }
 .sync-firewall p { margin: 0 0 8px; }
+/* Ajustes → Acerca de, en Android: lo que hizo que la aplicación se cerrara sola. */
+.crash-text { margin: 10px 0; padding: 10px 12px; max-height: 320px; overflow: auto; white-space: pre-wrap; word-break: break-word; font-size: 0.76rem; line-height: 1.4; background: var(--bg); border: 1px solid var(--border); border-radius: var(--r); user-select: text; -webkit-user-select: text; }
+/* Aviso de archivo guardado (savefile.js): el nombre y el botón que lo enseña en su carpeta. */
+.toast-saved { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; pointer-events: auto; overflow-wrap: anywhere; }
+.toast-action { flex: none; padding: 4px 10px; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: var(--r); background: transparent; color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+.toast-action:hover, .toast-action:focus-visible { background: rgba(255, 255, 255, 0.12); }

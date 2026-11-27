@@ -53,6 +53,7 @@ export default [
         'The two middle buttons are chosen in **Settings → Phone bar**: a section, to go straight to it (Locations, Tasks…), or a menu group, which opens its list (for example World: characters, locations, objects…).',
         'While you type, the bottom bar moves out of the way to leave room for the keyboard.',
         '**Settings** opens as a list of all its sections; each one has an arrow to go back.',
+        'On Android, if the app closes because of an error, **Settings → About** shows what went wrong, so you can copy it and report it. It is kept only on the device.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -567,6 +568,7 @@ export default [
         ['project-dossier.docx', 'All the working material in one document.'],
       ] },
       { p: 'The book, the sheets and the dossier are there so you can read your work without Creabel; restoring only needs the JSON and the files. What is in the [[data#trash|trash]] and the app preferences (theme, language, reminders), which do not belong to the project, are not included.' },
+      { tip: 'On Windows, whatever you export (backups, Word, EPUB…) is saved to the Downloads folder: a notice gives its name and has a button to show it in its folder.' },
       { h: 'Restoring a backup', id: 'restore' },
       { steps: [
         'In “Your projects”, press “Import backup”.',

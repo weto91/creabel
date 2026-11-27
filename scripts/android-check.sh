@@ -39,7 +39,7 @@ sha="$(echo "$certs" | grep -m1 'SHA-256 digest' | sed 's/.*digest: *//' || true
 {
   echo "### APK de Android"
   echo ""
-  echo "- Archivo: \`$(basename "$apk")\`"
+  echo "- Archivo: \`$(basename "$apk")\` ($(( ($(stat -c %s "$apk") + 524288) / 1048576 )) MB)"
   echo "- Certificado: \`$dn\`"
   echo "- Huella SHA-256: \`$sha\`"
 } >> "$summary"

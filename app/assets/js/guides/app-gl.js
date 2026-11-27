@@ -57,6 +57,7 @@ export default [
         'Os dous botóns do medio escóllense en **Axustes → Barra do móbil**: un apartado, para ir directo (Lugares, Pendentes…), ou un grupo do menú, que abre a súa lista (por exemplo Mundo: personaxes, lugares, obxectos…).',
         'Mentres escribes, a barra de abaixo apártase para deixarlle sitio ao teclado.',
         '**Axustes** ábrese como unha lista de todos os seus apartados; cada un, cunha frecha para volver.',
+        'En Android, se a aplicación se pecha soa por un erro, **Axustes → Acerca de** mostra que fallou, para copialo e avisar. Gárdase só no dispositivo.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-do-proxecto.docx', 'Todo o material de traballo nun documento.'],
       ] },
       { p: 'O libro, as fichas e o dossier están para poder ler o teu traballo sen Creabel; para restaurar só fan falta o JSON e os ficheiros. Non entran o que está na [[data#trash|papeleira]] nin as preferencias da aplicación (tema, idioma, avisos), que non son do proxecto.' },
+      { tip: 'En Windows, o que exportas (copias de seguridade, Word, EPUB…) gárdase no cartafol Descargas: un aviso di o seu nome e trae un botón para velo no seu cartafol.' },
       { h: 'Restaurar unha copia', id: 'restore' },
       { steps: [
         'En «Os teus proxectos», preme «Importar copia».',

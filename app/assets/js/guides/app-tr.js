@@ -57,6 +57,7 @@ export default [
         'Ortadaki iki düğme **Ayarlar → Telefon çubuğu** altında seçilir: doğrudan gitmek için bir bölüm (Mekânlar, Yapılacaklar…) ya da listesini açan bir menü grubu (örneğin Dünya: karakterler, mekânlar, nesneler…).',
         'Siz yazarken alttaki çubuk klavyeye yer açmak için çekilir.',
         '**Ayarlar** tüm bölümlerinin listesi olarak açılır; her biri geri dönmek için bir okla.',
+        'Android’de uygulama bir hata yüzünden kendiliğinden kapanırsa **Ayarlar → Hakkında** neyin ters gittiğini gösterir; kopyalayıp bildirebilirsiniz. Metin yalnızca cihazda saklanır.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['proje-defteri.docx', 'Tüm çalışma malzemesi tek bir belgede.'],
       ] },
       { p: 'Kitap, kartlar ve proje defteri, çalışmanızı Creabel olmadan okuyabilmeniz için vardır; geri yüklemek için yalnızca JSON ve dosyalar gerekir. [[data#trash|Çöp kutusundakiler]] ve projeye ait olmayan uygulama tercihleri (tema, dil, uyarılar) dâhil değildir.' },
+      { tip: 'Windows’ta dışa aktardıklarınız (yedekler, Word, EPUB…) İndirilenler klasörüne kaydedilir: bir bildirim dosyanın adını söyler ve onu klasöründe gösteren bir düğme sunar.' },
       { h: 'Bir yedeği geri yüklemek', id: 'restore' },
       { steps: [
         '“Projeleriniz” sayfasında “Yedeği içe aktar”a basın.',

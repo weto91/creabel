@@ -1,10 +1,13 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "desktop",
-  "description": "Permisos solo de escritorio: buscar e instalar actualizaciones",
+  "description": "Permisos solo de escritorio: buscar e instalar actualizaciones, y guardar en la carpeta Descargas lo que se exporta (savefile.js)",
   "platforms": ["windows", "linux", "macOS"],
   "windows": ["main", "ventana-*"],
   "permissions": [
-    "updater:default"
+    "updater:default",
+    "fs:allow-download-read",
+    "fs:allow-download-write",
+    "opener:allow-reveal-item-in-dir"
   ]
 }

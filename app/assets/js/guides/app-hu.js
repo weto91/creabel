@@ -57,6 +57,7 @@ export default [
         'A két középső gombot a **Beállítások → Alsó sáv mobilon** részben választhatod ki: egy menüpontot, hogy egyenesen odaugorj (Helyszínek, Teendők…), vagy egy menücsoportot, amely megnyitja a listáját (például Világ: szereplők, helyszínek, tárgyak…).',
         'Írás közben az alsó sáv félrehúzódik, hogy helyet adjon a billentyűzetnek.',
         'A **Beállítások** az összes része listájaként nyílik meg; mindegyikben van egy nyíl a visszalépéshez.',
+        'Androidon: ha az alkalmazás hiba miatt magától bezárul, a **Beállítások → Névjegy** megmutatja, mi romlott el, hogy kimásolhasd és jelezhesd. A szöveg csak az eszközön tárolódik.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['projektdosszie.docx', 'A teljes munkaanyag egyetlen dokumentumban.'],
       ] },
       { p: 'A könyv, az adatlapok és a dosszié arra valók, hogy a munkádat a Creabel nélkül is elolvashasd; a visszaállításhoz csak a JSON és a fájlok kellenek. Nem kerül bele, ami a [[data#trash|lomtárban]] van, sem az alkalmazás beállításai (téma, nyelv, figyelmeztetések), mert ezek nem a projekthez tartoznak.' },
+      { tip: 'Windowson minden, amit exportálsz (biztonsági mentések, Word, EPUB…), a Letöltések mappába kerül: egy értesítés kiírja a fájl nevét, és egy gombbal megmutathatod a mappájában.' },
       { h: 'Mentés visszaállítása', id: 'restore' },
       { steps: [
         'A „Projektjeid” oldalon nyomd meg a „Mentés importálása” gombot.',

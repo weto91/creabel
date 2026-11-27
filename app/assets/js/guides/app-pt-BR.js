@@ -57,6 +57,7 @@ export default [
         'Os dois botões do meio são escolhidos em **Configurações → Barra do celular**: uma seção, para ir direto (Lugares, Pendências…), ou um grupo do menu, que abre a lista dele (por exemplo Mundo: personagens, lugares, objetos…).',
         'Enquanto você escreve, a barra de baixo sai do caminho para dar lugar ao teclado.',
         '**Configurações** abre como uma lista de todas as seções; cada uma, com uma seta para voltar.',
+        'No Android, se o aplicativo fechar sozinho por causa de um erro, **Configurações → Sobre** mostra o que falhou, para copiar e avisar. Fica guardado só no dispositivo.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossie-do-projeto.docx', 'Todo o material de trabalho em um documento.'],
       ] },
       { p: 'O livro, as fichas e o dossiê existem para que você possa ler o seu trabalho sem o Creabel; para restaurar, só são necessários o JSON e os arquivos. Não entram o que está na [[data#trash|lixeira]] nem as preferências do aplicativo (tema, idioma, avisos), que não fazem parte do projeto.' },
+      { tip: 'No Windows, o que você exporta (cópias de segurança, Word, EPUB…) é salvo na pasta Downloads: um aviso informa o nome e traz um botão para mostrá-lo na pasta.' },
       { h: 'Restaurar um backup', id: 'restore' },
       { steps: [
         'Em “Seus projetos”, clique em “Importar backup”.',

@@ -57,6 +57,7 @@ export default [
         'Dvě prostřední tlačítka se volí v **Nastavení → Lišta v mobilu**: sekce, do které se dostanete přímo (Místa, Úkoly…), nebo skupina z nabídky, která otevře svůj seznam (například Svět: postavy, místa, předměty…).',
         'Při psaní spodní lišta uhne, aby udělala místo klávesnici.',
         '**Nastavení** se otevře jako seznam všech oddílů; každý má šipku zpět.',
+        'V Androidu: pokud se aplikace kvůli chybě sama ukončí, **Nastavení → O aplikaci** ukáže, co se pokazilo, abyste to mohli zkopírovat a nahlásit. Text je uložen jen v zařízení.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dosier-projektu.docx', 'Všechny pracovní materiály v jednom dokumentu.'],
       ] },
       { p: 'Kniha, karty a dosiér jsou tam proto, abyste mohli svou práci číst bez Creabel; k obnovení stačí JSON a soubory. Nejsou v ní položky z [[data#trash|koše]] ani předvolby aplikace (motiv, jazyk, upozornění), které k projektu nepatří.' },
+      { tip: 'Ve Windows se vše, co exportujete (zálohy, Word, EPUB…), ukládá do složky Stažené soubory: oznámení uvede název souboru a nabídne tlačítko, které ho zobrazí ve složce.' },
       { h: 'Obnovení zálohy', id: 'restore' },
       { steps: [
         'V části „Vaše projekty“ stiskněte „Importovat zálohu“.',

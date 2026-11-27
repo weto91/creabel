@@ -57,6 +57,7 @@ export default [
         'Les deux boutons du milieu se choisissent dans **Réglages → Barre mobile** : une section, pour y aller directement (Lieux, Tâches…), ou un groupe du menu, qui ouvre sa liste (par exemple Monde : personnages, lieux, objets…).',
         'Pendant que vous écrivez, la barre du bas s’efface pour laisser la place au clavier.',
         '**Réglages** s’ouvre sous la forme d’une liste de toutes ses sections ; chacune a une flèche pour revenir en arrière.',
+        'Sur Android, si l’application se ferme toute seule à cause d’une erreur, **Réglages → À propos** indique ce qui a échoué, pour le copier et le signaler. Ce texte reste sur l’appareil.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-du-projet.docx', 'Tout le matériel de travail dans un seul document.'],
       ] },
       { p: 'Le livre, les fiches et le dossier sont là pour que vous puissiez lire votre travail sans Creabel ; pour restaurer, seuls le JSON et les fichiers sont nécessaires. Ce qui se trouve dans la [[data#trash|corbeille]] n’est pas inclus, pas plus que les préférences de l’application (thème, langue, rappels), qui n’appartiennent pas au projet.' },
+      { tip: 'Sous Windows, ce que vous exportez (sauvegardes, Word, EPUB…) est enregistré dans le dossier Téléchargements : un message indique son nom et propose un bouton pour l’afficher dans son dossier.' },
       { h: 'Restaurer une sauvegarde', id: 'restore' },
       { steps: [
         'Dans « Vos projets », cliquez sur « Importer une sauvegarde ».',

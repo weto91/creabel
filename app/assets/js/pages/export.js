@@ -166,8 +166,8 @@ export async function exportPage({ el, pid }) {
         return;
       }
       const blob = { docx: toDocx, epub: toEpub, html: toHtml, txt: toTxt }[job.format](blocks, opts);
-      downloadBlob(blob, `${slugify(p.name)}${suffix}.${job.format}`);
-      toast(t('export.done'), 'success');
+      // En la aplicación de Windows el aviso lo da la propia entrega (nombre y carpeta).
+      if (!downloadBlob(blob, `${slugify(p.name)}${suffix}.${job.format}`)) toast(t('export.done'), 'success');
     } catch (err) {
       console.error(err);
       toast(errorText(err), 'error', 6000);

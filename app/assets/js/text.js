@@ -1,6 +1,7 @@
 // Utilidades de texto, HTML, fechas y descargas.
 import { getLang } from './i18n.js';
 import { getPrefs } from './prefs.js';
+import { isDesktopApp } from './platform.js';
 
 const ID_ALPHABET = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -328,7 +329,8 @@ export function formatClock(value) {
 
 // ---------- Archivos ----------
 
-export function downloadBlob(blob, filename) {
+/** La descarga del navegador: el archivo va a donde el navegador guarde las descargas. */
+function browserDownload(blob, filename) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
@@ -337,6 +339,26 @@ export function downloadBlob(blob, filename) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+/**
+ * Entrega un archivo al usuario. En la aplicación de Windows lo guarda en Descargas y avisa de
+ * su nombre, con un botón para verlo en su carpeta (savefile.js); si eso falla, y en el resto de
+ * sitios, usa la descarga del navegador. Devuelve true si ya se encarga de avisar.
+ */
+export function downloadBlob(blob, filename) {
+  if (!isDesktopApp) {
+    browserDownload(blob, filename);
+    return false;
+  }
+  import('./savefile.js')
+    .then((m) => m.saveToDownloads(blob, filename).catch((err) => {
+      console.warn('Creabel: no se ha podido guardar en Descargas; se usa la descarga normal', err);
+      browserDownload(blob, filename);
+      m.announceSaved(filename, null);
+    }))
+    .catch((err) => { console.error(err); browserDownload(blob, filename); });
+  return true;
 }
 
 /**

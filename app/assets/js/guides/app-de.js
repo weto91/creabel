@@ -57,6 +57,7 @@ export default [
         'Die beiden mittleren Schaltflächen wählst du unter **Einstellungen → Leiste auf dem Handy**: einen Bereich, um direkt hinzuspringen (Orte, Aufgaben …), oder eine Menügruppe, die ihre Liste öffnet (zum Beispiel Welt: Figuren, Orte, Gegenstände …).',
         'Während du schreibst, weicht die untere Leiste zur Seite, um der Tastatur Platz zu machen.',
         '**Einstellungen** öffnet sich als Liste aller Bereiche; jeder hat einen Pfeil, um zurückzukehren.',
+        'Unter Android: Wenn die App wegen eines Fehlers von selbst beendet wird, zeigt **Einstellungen → Über**, was schiefgegangen ist, damit du es kopieren und melden kannst. Es wird nur auf dem Gerät gespeichert.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['projektdossier.docx', 'Das gesamte Arbeitsmaterial in einem Dokument.'],
       ] },
       { p: 'Buch, Karteikarten und Dossier sind dafür da, dass du deine Arbeit ohne Creabel lesen kannst; zum Wiederherstellen braucht es nur das JSON und die Dateien. Nicht enthalten sind der Inhalt des [[data#trash|Papierkorbs]] und die Einstellungen der App (Design, Sprache, Erinnerungen), die nicht zum Projekt gehören.' },
+      { tip: 'Unter Windows wird alles, was du exportierst (Sicherungen, Word, EPUB …), im Ordner „Downloads“ gespeichert: Ein Hinweis nennt den Dateinamen und hat eine Schaltfläche, um die Datei in ihrem Ordner anzuzeigen.' },
       { h: 'Eine Sicherung wiederherstellen', id: 'restore' },
       { steps: [
         'Tippe unter „Deine Projekte“ auf „Sicherung importieren“.',

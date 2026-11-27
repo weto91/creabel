@@ -57,6 +57,7 @@ export default [
         'Los dos botones del medio se eligen en **Ajustes → Barra del celular**: un apartado, para ir directo (Lugares, Pendientes…), o un grupo del menú, que abre su lista (por ejemplo Mundo: personajes, lugares, objetos…).',
         'Mientras escribes, la barra de abajo se aparta para dejar sitio al teclado.',
         '**Ajustes** se abre como una lista de todos sus apartados; cada uno, con una flecha para volver.',
+        'En Android, si la aplicación se cierra sola por un error, **Ajustes → Acerca de** muestra qué falló, para copiarlo y avisar. Se guarda solo en el dispositivo.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-del-proyecto.docx', 'Todo el material de trabajo en un documento.'],
       ] },
       { p: 'El libro, las fichas y el dossier están para poder leer tu trabajo sin Creabel; para restaurar solo hacen falta el JSON y los archivos. No entran lo que está en la [[data#trash|papelera]] ni las preferencias de la aplicación (tema, idioma, avisos), que no son del proyecto.' },
+      { tip: 'En Windows, lo que exportas (copias de seguridad, Word, EPUB…) se guarda en la carpeta Descargas: un aviso dice su nombre y trae un botón para verlo en su carpeta.' },
       { h: 'Restaurar una copia', id: 'restore' },
       { steps: [
         'En «Tus proyectos», pulsa «Importar copia».',

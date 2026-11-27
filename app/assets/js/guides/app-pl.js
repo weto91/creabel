@@ -57,6 +57,7 @@ export default [
         'Dwa środkowe przyciski wybiera się w **Ustawienia → Pasek w telefonie**: sekcję, żeby przechodzić do niej od razu (Miejsca, Zadania…), albo grupę menu, która otwiera swoją listę (na przykład Świat: postacie, miejsca, przedmioty…).',
         'Podczas pisania dolny pasek się chowa, żeby zrobić miejsce klawiaturze.',
         '**Ustawienia** otwierają się jako lista wszystkich sekcji; każda ze strzałką powrotu.',
+        'Na Androidzie, jeśli aplikacja sama się zamknie z powodu błędu, **Ustawienia → O aplikacji** pokazuje, co poszło nie tak, żeby można było to skopiować i zgłosić. Tekst jest zapisany tylko na urządzeniu.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['teczka-projektu.docx', 'Cały materiał roboczy w jednym dokumencie.'],
       ] },
       { p: 'Książka, karty i teczka pozwalają czytać twoją pracę bez Creabel; do przywrócenia potrzebne są tylko plik JSON i pliki. Kopia nie obejmuje zawartości [[data#trash|kosza]] ani preferencji aplikacji (motyw, język, przypomnienia), które nie należą do projektu.' },
+      { tip: 'W systemie Windows to, co eksportujesz (kopie zapasowe, Word, EPUB…), jest zapisywane w folderze Pobrane: komunikat podaje nazwę pliku i ma przycisk, który pokazuje go w folderze.' },
       { h: 'Przywracanie kopii', id: 'restore' },
       { steps: [
         'Na ekranie „Twoje projekty” naciśnij „Importuj kopię”.',

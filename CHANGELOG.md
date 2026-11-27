@@ -3,6 +3,20 @@
 Todas las versiones de Creabel, de la más reciente a la más antigua. Cada versión publicada toma
 de aquí sus notas: el apartado con su número (`## [0.1.0]`), hasta el siguiente.
 
+## [0.1.1]
+
+### Corregido
+- En Android, la aplicación se cerraba sola al abrir el lector de códigos QR para emparejar el
+  móvil con el PC.
+- En Windows, al exportar (una copia de seguridad, Word, EPUB…) no se avisaba de nada: ahora un
+  aviso dice el nombre del archivo guardado en Descargas, con un botón para verlo en su carpeta.
+  Si ya había uno con ese nombre, no se pisa: se guarda como «nombre (1)».
+
+### Añadido
+- En Android, si la aplicación se cierra sola por un error, «Ajustes → Acerca de» enseña qué
+  falló, para poder copiarlo y avisar. Se guarda solo en el dispositivo.
+- Creabel ya está en Google Play y en Microsoft Store.
+
 ## [0.1.0]
 
 ### Añadido

@@ -57,6 +57,7 @@ export default [
         'I due pulsanti centrali si scelgono in **Impostazioni → Barra del telefono**: una sezione, per andarci direttamente (Luoghi, Promemoria…), o un gruppo del menu, che apre il suo elenco (per esempio Mondo: personaggi, luoghi, oggetti…).',
         'Mentre scrivi, la barra in basso si fa da parte per lasciare spazio alla tastiera.',
         '**Impostazioni** si apre come un elenco di tutte le sue sezioni, ognuna con una freccia per tornare indietro.',
+        'Su Android, se l’applicazione si chiude da sola per un errore, **Impostazioni → Informazioni su Creabel** mostra che cosa è andato storto, per copiarlo e segnalarlo. Resta solo sul dispositivo.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-del-progetto.docx', 'Tutto il materiale di lavoro in un documento.'],
       ] },
       { p: 'Il libro, le schede e il dossier servono a poter leggere il tuo lavoro senza Creabel; per ripristinare bastano il JSON e gli allegati. Non sono inclusi ciò che si trova nel [[data#trash|cestino]] né le preferenze dell’applicazione (tema, lingua, avvisi), che non appartengono al progetto.' },
+      { tip: 'Su Windows, ciò che esporti (copie di sicurezza, Word, EPUB…) viene salvato nella cartella Download: un avviso ne indica il nome e ha un pulsante per mostrarlo nella sua cartella.' },
       { h: 'Ripristinare un backup', id: 'restore' },
       { steps: [
         'In «I tuoi progetti», premi «Importa backup».',

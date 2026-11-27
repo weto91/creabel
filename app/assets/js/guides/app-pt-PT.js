@@ -57,6 +57,7 @@ export default [
         'Os dois botões do meio escolhem-se em **Definições → Barra do telemóvel**: uma secção, para ir diretamente (Lugares, Pendentes…), ou um grupo do menu, que abre a respetiva lista (por exemplo, Mundo: personagens, lugares, objetos…).',
         'Enquanto escreve, a barra de baixo afasta-se para dar lugar ao teclado.',
         '**Definições** abre como uma lista de todas as suas secções; cada uma com uma seta para voltar.',
+        'No Android, se a aplicação se fechar sozinha devido a um erro, **Definições → Acerca de** mostra o que falhou, para copiar e comunicar. Fica guardado apenas no dispositivo.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dossier-do-projeto.docx', 'Todo o material de trabalho num documento.'],
       ] },
       { p: 'O livro, as fichas e o dossier existem para poder ler o seu trabalho sem o Creabel; para restaurar só são precisos o JSON e os ficheiros. Não entram o que está no [[data#trash|lixo]] nem as preferências da aplicação (tema, idioma, avisos), que não pertencem ao projeto.' },
+      { tip: 'No Windows, o que exporta (cópias de segurança, Word, EPUB…) é guardado na pasta Transferências: um aviso indica o nome e tem um botão para o mostrar na pasta.' },
       { h: 'Restaurar uma cópia', id: 'restore' },
       { steps: [
         'Em «Os seus projetos», prima «Importar cópia».',

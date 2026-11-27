@@ -57,6 +57,7 @@ export default [
         'Srednja gumba izberete v **Nastavitve → Vrstica na telefonu**: razdelek, da greste naravnost vanj (Kraji, Opravila …), ali skupino menija, ki odpre svoj seznam (na primer Svet: liki, kraji, predmeti …).',
         'Med pisanjem se spodnja vrstica umakne, da naredi prostor tipkovnici.',
         '**Nastavitve** se odprejo kot seznam vseh razdelkov; vsak ima puščico za vrnitev.',
+        'V Androidu: če se aplikacija zaradi napake sama zapre, **Nastavitve → O aplikaciji** pokaže, kaj je šlo narobe, da lahko to kopirate in prijavite. Besedilo je shranjeno samo v napravi.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dosje-projekta.docx', 'Vse delovno gradivo v enem dokumentu.'],
       ] },
       { p: 'Knjiga, kartice in dosje so tam zato, da lahko svoje delo berete brez Creabela; za obnovitev sta potrebna le JSON in datoteke. Ne vsebuje tega, kar je v [[data#trash|košu]], niti nastavitev aplikacije (tema, jezik, opozorila), ki niso del projekta.' },
+      { tip: 'V sistemu Windows se vse, kar izvozite (varnostne kopije, Word, EPUB…), shrani v mapo Prenosi: obvestilo pove ime datoteke in ima gumb, ki jo pokaže v mapi.' },
       { h: 'Obnovitev kopije', id: 'restore' },
       { steps: [
         'V »Vaši projekti« pritisnite »Uvozi kopijo«.',

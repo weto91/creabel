@@ -8,7 +8,7 @@ src-tauri/tauri.release.conf.json
 
 # Herramientas locales (servidor de pruebas de la interfaz)
 .claude/
-app/_prueba-*.html
+app/_prueba-*
 
 # Claves: nunca en el repositorio (van en los secretos de GitHub)
 *.jks

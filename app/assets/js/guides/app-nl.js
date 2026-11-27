@@ -57,6 +57,7 @@ export default [
         'De twee middelste knoppen kies je in **Instellingen → Balk op mobiel**: een onderdeel, om er direct naartoe te gaan (Locaties, Taken…), of een menugroep, die de lijst ervan opent (bijvoorbeeld Wereld: personages, locaties, voorwerpen…).',
         'Terwijl je schrijft, schuift de onderste balk opzij om plaats te maken voor het toetsenbord.',
         '**Instellingen** opent als een lijst van al zijn onderdelen; elk onderdeel met een pijl om terug te gaan.',
+        'Op Android: als de app door een fout vanzelf wordt afgesloten, laat **Instellingen → Over** zien wat er misging, zodat je het kunt kopiëren en melden. Het wordt alleen op het apparaat bewaard.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['projectdossier.docx', 'Al het werkmateriaal in één document.'],
       ] },
       { p: 'Het boek, de kaarten en het dossier zijn er om je werk zonder Creabel te kunnen lezen; om terug te zetten zijn alleen de JSON en de bestanden nodig. Niet inbegrepen: wat in de [[data#trash|prullenbak]] staat en de voorkeuren van de app (thema, taal, meldingen), want die horen niet bij het project.' },
+      { tip: 'Op Windows wordt alles wat je exporteert (back-ups, Word, EPUB…) opgeslagen in de map Downloads: een melding noemt de naam en heeft een knop om het bestand in zijn map te tonen.' },
       { h: 'Een back-up terugzetten', id: 'restore' },
       { steps: [
         'Druk in “Je projecten” op “Back-up importeren”.',

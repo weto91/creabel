@@ -14,6 +14,44 @@ import { syncSection } from './syncsettings.js';
 import { navSlotChoices, NAV_SLOT_DEFAULTS, redrawNav } from '../shell.js';
 
 /**
+ * En Android, si la aplicación se cerró sola la última vez por un error, qué falló (lo apunta
+ * MainActivity.kt en los datos de la aplicación; no sale del dispositivo). Se puede copiar para
+ * avisar del fallo, o borrar. Devuelve null si no hay nada apuntado.
+ */
+function crashPanel() {
+  const bridge = typeof window !== 'undefined' ? window.CreabelAndroid : null;
+  let text = '';
+  try { text = bridge && bridge.lastCrash ? String(bridge.lastCrash() || '') : ''; } catch (err) { text = ''; }
+  if (!text.trim()) return null;
+  const pre = h('pre.crash-text', text);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      // Sin acceso al portapapeles: se selecciona el texto y se copia a la antigua.
+      const range = document.createRange();
+      range.selectNodeContents(pre);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+    }
+    toast(t('crash.copied'), 'success');
+  };
+  const box = h('section.panel',
+    h('h3', t('crash.title')),
+    h('p.muted', t('crash.hint')),
+    pre,
+    h('div.btn-row',
+      btn(t('crash.copy'), { icon: 'copy', onClick: copy }),
+      btn(t('common.delete'), { kind: 'ghost', onClick: () => {
+        try { bridge.clearLastCrash(); } catch (err) { /* se borrará la próxima vez */ }
+        box.remove();
+      } })));
+  return box;
+}
+
+/**
  * En pantallas estrechas, #/settings es una lista de todos los apartados (como los ajustes de
  * Android), con el cambio de tema a mano arriba; cada apartado se abre en su página.
  */
@@ -350,7 +388,7 @@ export async function settingsPage({ el, params, query, refresh }) {
         const update = await checkForUpdate({ quiet: false });
         if (update) showUpdateBanner(update);
         else toast(t('update.none'), 'success');
-      } })) : isStoreApp ? h('p.muted', t('update.fromStore')) : null)],
+      } })) : isStoreApp ? h('p.muted', t('update.fromStore')) : null), crashPanel()].filter(Boolean),
   };
 
   clear(el);

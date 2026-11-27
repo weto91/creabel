@@ -57,6 +57,7 @@ export default [
         'Dva srednja dugmeta birate u **Podešavanja → Traka na telefonu**: odeljak, da biste išli pravo na njega (Mesta, Zadaci…), ili grupu iz menija, koja otvara svoju listu (na primer Svet: likovi, mesta, predmeti…).',
         'Dok kucate, donja traka se sklanja i pravi mesto tastaturi.',
         '**Podešavanja** se otvaraju kao lista svih odeljaka; svaki ima strelicu za povratak.',
+        'Na Androidu: ako se aplikacija sama zatvori zbog greške, **Podešavanja → O aplikaciji** prikazuje šta je pošlo naopako, da biste to kopirali i prijavili. Tekst se čuva samo na uređaju.',
       ] },
       { see: ['path', 'links', 'keys'] },
     ],
@@ -571,6 +572,7 @@ export default [
         ['dosije-projekta.docx', 'Sav radni materijal u jednom dokumentu.'],
       ] },
       { p: 'Knjiga, kartoni i dosije postoje da biste svoj rad mogli da čitate i bez aplikacije Creabel; za vraćanje su potrebni samo JSON i datoteke. Ne sadrži ono što je u [[data#trash|otpadu]], kao ni podešavanja aplikacije (tema, jezik, upozorenja), koja ne pripadaju projektu.' },
+      { tip: 'U sistemu Windows sve što izvezete (rezervne kopije, Word, EPUB…) čuva se u fascikli Preuzimanja: obaveštenje navodi ime datoteke i ima dugme koje je prikazuje u fascikli.' },
       { h: 'Vraćanje kopije', id: 'restore' },
       { steps: [
         'U odeljku „Vaši projekti“ pritisnite „Uvezi kopiju“.',

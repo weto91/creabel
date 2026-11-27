@@ -21,6 +21,10 @@
 //  - requestLocalNetwork(): enseña el aviso de Android; la respuesta llega a la página con el
 //    evento `creabel:local-network` (detail: el estado nuevo);
 //  - openAppSettings(): abre los ajustes de Creabel en Android.
+//
+// Cierres inesperados: si la aplicación se cierra sola por un error, se apunta qué falló en un
+// archivo de sus datos (no sale del dispositivo) y la página lo enseña en Ajustes → Acerca de,
+// para poder copiarlo y avisar: lastCrash() devuelve el texto y clearLastCrash() lo borra.
 package io.github.weto91.creabel
 
 import android.content.Intent
@@ -31,6 +35,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
@@ -42,16 +47,43 @@ import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 private const val LOCAL_NETWORK = "android.permission.ACCESS_LOCAL_NETWORK"
 private const val PREFS = "creabel"
 private const val ASKED = "localNetworkAsked"
+private const val CRASH_FILE = "ultimo-cierre.txt"
+private var crashRecorderInstalled = false
 
 class MainActivity : TauriActivity() {
   private var page: WebView? = null
   private lateinit var localNetworkLauncher: ActivityResultLauncher<String>
 
+  // Apunta el error que cierra la aplicación y deja que Android siga con lo suyo.
+  private fun installCrashRecorder() {
+    if (crashRecorderInstalled) return
+    crashRecorderInstalled = true
+    val file = File(filesDir, CRASH_FILE)
+    val previous = Thread.getDefaultUncaughtExceptionHandler()
+    Thread.setDefaultUncaughtExceptionHandler { thread, error ->
+      try {
+        val head = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(Date()) +
+          " · Creabel " + (packageManager.getPackageInfo(packageName, 0).versionName ?: "?") +
+          " · Android " + Build.VERSION.RELEASE + " (API " + Build.VERSION.SDK_INT + ")" +
+          " · " + Build.MANUFACTURER + " " + Build.MODEL
+        file.writeText((head + "\n" + Log.getStackTraceString(error)).take(20000))
+      } catch (ignored: Throwable) {
+        // Si no se puede apuntar, no se apunta.
+      }
+      previous?.uncaughtException(thread, error)
+    }
+  }
+
   override fun onCreate(savedInstanceState: Bundle?) {
+    installCrashRecorder()
     enableEdgeToEdge()
     super.onCreate(savedInstanceState)
 
@@ -108,6 +140,19 @@ class MainActivity : TauriActivity() {
   }
 
   inner class CreabelBridge {
+    @JavascriptInterface
+    fun lastCrash(): String = try {
+      val file = File(filesDir, CRASH_FILE)
+      if (file.exists()) file.readText() else ""
+    } catch (ignored: Throwable) {
+      ""
+    }
+
+    @JavascriptInterface
+    fun clearLastCrash() {
+      try { File(filesDir, CRASH_FILE).delete() } catch (ignored: Throwable) { /* nada que hacer */ }
+    }
+
     @JavascriptInterface
     fun localNetworkState(): String = this@MainActivity.localNetworkState()
 
